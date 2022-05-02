@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>Lazy Loading</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <main class="page">
+         <div class="page__container">
+            <section class="page__section page__section_1">
+               <h1 class="page__title">Заголовок</h1>
+               <div class="page__text">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Quae, non eum qui doloremque sequi culpa repellendus nulla unde dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+               </div>
+            </section>
+            <section class="page__section page__section_2">
+               <h2 class="page__sub-title">Подзаголовок</h2>
+               <div class="page__images">
+                  <div class="page__image">
+                     <!-- Первый делом отменяем стандартную загрузку изображений. Тот путь, который нам нужен, записываем через атрибут data-src; в атрибут src добавляем 1пиксельную картинку заглушку (png!)-->
+                     <img data-src="images/01.jpg" src="images/1x1.png" alt="Картинка">
+                  </div>
+                  <div class="page__image">
+                     <img data-src="./images/02.jpg" src="images/1x1.png" alt="Картинка">
+                  </div>
+                  <div class="page__image">
+                     <picture>
+                        <!-- Тот путь, который нам нужен, записываем через атрибут data-srcset и data-src. в атрибуты srcset и src добавляем 1пиксельную картинку заглушку (png!)-->
+                        <source data-srcset="./images/06.webp" srcset="./images/1x1.png" type="image/webp">
+                        <img data-src="./images/06.jpg" src="images/1x1.png" alt="Картинка">
+                     </picture>
+                  </div>
+                  <div class="page__image">
+                     <img data-src="./images/04.jpg" src="images/1x1.png" alt="Картинка">
+                  </div>
+                  <div class="page__image">
+                     <img data-src="./images/05.jpg" src="images/1x1.png" alt="Картинка">
+                  </div>
+                  <div class="page__image">
+                     <img data-src="./images/03.jpg" src="images/1x1.png" alt="Картинка">
+                  </div>
+               </div>
+            </section>
+            <section class="page__section page__section_3">
+               <h2 class="page__sub-title">Подзаголовок</h2>
+               <!-- здесь добавляем атрибут data-map, где будет храниться значение src iframe -->
+               <div class="page__map _load-map"
+                  data-map="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17697.615220489522!2d36.732009749999996!3d56.32634615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1651237627679!5m2!1sru!2sru">
+
+               </div>
+            </section>
+            <section class="page__section page__section_1">
+               <h2 class="page__title">Заголовок</h2>
+               <div class="page__text _load-more">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Quae, non eum qui doloremque sequi culpa repellendus nulla unde dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex praesentium voluptates voluptatum
+                     autem atque debitis
+                     temporibus distinctio incidunt quas nam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quae, non eum qui doloremque sequi culpa repellendus nulla unde
+                     dolorum nam?</p>
+               </div>
+            </section>
+         </div>
+      </main>
+   </div>
+
+
+   <script src="./script.js"></script>
+</body>
+
+</html>
